@@ -20,6 +20,7 @@
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/header.css">
 		<link rel="stylesheet" href="css/about-us.css">
+		<link rel="stylesheet" href="css/slider.css">
 
 		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -67,7 +68,9 @@
 		<div id="main" role="main">
 			<div id="hero" class="fullscreen container" style="background-image: url('http://lorempixel.com/1200/800/people/9/');">
 				<div class="container">
-					<h1 class="col12 page-heading">Fusce hendrerit vantur venenatis lorem, ullamcorper ipsum elit.</h1>
+					<div class="row">
+						<h1 class="col12 page-heading">Fusce hendrerit vantur venenatis lorem, ullamcorper ipsum elit.</h1>
+					</div>
 				</div>
 			</div>
 
@@ -75,17 +78,76 @@
 				<div class="container">
 					<h1 class="section-heading">About HGVCG</h1>
 
-					<div class="row full-width-copy">
-						<p>Phasellus interdum sit amet elit et dignissim. In elementum, sem nec eleifend tincidunt, dolor leo semper ante, id blandit turpis orci nec nunc. Quisque convallis scelerisque ultricies. Quisque aliquet porta magna, vitae adipiscing libero convallis ac. Proin eu purus a nulla dictum scelerisque ac at magna. Donec molestie leo nunc, vel blandit tellus convallis quis.</p>
-						<p>Phasellus interdum sit amet elit et dignissim. In elementum, sem nec eleifend tincidunt, dolor leo semper ante, id blandit turpis orci nec nunc. Quisque convallis scelerisque ultricies. Quisque aliquet porta magna, vitae adipiscing libero convallis ac. Proin eu purus a nulla dictum scelerisque ac at magna. Donec molestie leo nunc, vel blandit tellus convallis quis.</p>
+					<div class="row">
+						<div class="full-width-copy col12">
+							<p>Phasellus interdum sit amet elit et dignissim. In elementum, sem nec eleifend tincidunt, dolor leo semper ante, id blandit turpis orci nec nunc. Quisque convallis scelerisque ultricies. Quisque aliquet porta magna, vitae adipiscing libero convallis ac. Proin eu purus a nulla dictum scelerisque ac at magna. Donec molestie leo nunc, vel blandit tellus convallis quis.</p>
+							<p>Phasellus interdum sit amet elit et dignissim. In elementum, sem nec eleifend tincidunt, dolor leo semper ante, id blandit turpis orci nec nunc. Quisque convallis scelerisque ultricies. Quisque aliquet porta magna, vitae adipiscing libero convallis ac. Proin eu purus a nulla dictum scelerisque ac at magna. Donec molestie leo nunc, vel blandit tellus convallis quis.</p>
+						</div>
 					</div>
+				</div>
+			</div>
 
+			<div id="leadership" class="fullscreen container light section">
+				<div class="container">
+					<h1 class="section-heading">Leadership</h1>
+
+					<div class="row">
+						<div class="col1 offset page" data-target="prev">PREV</div>
+
+						<div id="leadership-fader" class="col10 fader">
+							<div class="slide">
+								<img src="http://lorempixel.com/420/460/people/6/" alt="" class="col6">
+
+								<div class="col6 fader-information">
+									<hgroup>
+										<h2 class="heading-a name">Jai Sim</h2>
+										<h3 class="subheading-a title">President</h3>
+									</hgroup>
+
+									<p>Phasellus interdum sit amet elit et dignissim. In elementum, sem nec eleifend tincidunt, dolor leo semper ante, id blandit turpis orci nec nunc. Quisque convallis scelerisque ultricies. Quisque aliquet porta magna, vitae adipiscing libero convallis ac.</p>
+									<a href="#" class="button">Connect on Linkedin</a>
+								</div>
+							</div>
+
+							<div class="slide">
+								<img src="http://lorempixel.com/420/460/people/7/" alt="" class="col6">
+
+								<div class="col6 fader-information">
+									<hgroup>
+										<h2 class="heading-a name">Chung Ling-Soo</h2>
+										<h3 class="subheading-a title">National Treasure</h3>
+									</hgroup>
+
+									<p>Phasellus interdum sit amet elit et dignissim. In elementum, sem nec eleifend tincidunt, dolor leo semper ante, id blandit turpis orci nec nunc. Quisque convallis scelerisque ultricies. Quisque aliquet porta magna, vitae adipiscing libero convallis ac.</p>
+									<a href="#" class="button">Connect on Linkedin</a>
+								</div>
+							</div>
+
+							<div class="slide">
+								<img src="http://lorempixel.com/420/460/people/8/" alt="" class="col6">
+
+								<div class="col6 fader-information">
+									<hgroup>
+										<h2 class="heading-a name">Dick Johnson</h2>
+										<h3 class="subheading-a title">Company Penis Joke</h3>
+									</hgroup>
+
+									<p>Phasellus interdum sit amet elit et dignissim. In elementum, sem nec eleifend tincidunt, dolor leo semper ante, id blandit turpis orci nec nunc. Quisque convallis scelerisque ultricies. Quisque aliquet porta magna, vitae adipiscing libero convallis ac.</p>
+									<a href="#" class="button">Connect on Linkedin</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col1 offset page" data-target="next">NEXT</div>
+					</div>
 				</div>
 			</div>
 
 			<aside role="complementary" class="fullscreen container tout">
 				<div class="container">
-					<span class="tout-copy">HGVCG’s strength is the strength of its team members. Nunc quis lorem varius, sollicitudin tellus id, sodales magna curabitir eget non duis set augue.</span>
+					<div class="row">
+						<span class="col12 tout-copy">HGVCG’s strength is the strength of its team members. Nunc quis lorem varius, sollicitudin tellus id, sodales magna curabitir eget non duis set augue.</span>
+					</div>
 				</div>
 			</aside>
 
@@ -212,6 +274,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
+        <script src="js/slider.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

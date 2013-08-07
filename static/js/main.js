@@ -23,8 +23,6 @@
     }
 
     $(function () {
-      console.log('ping');
-
       win = $(window);
       header = $('#site-header');
       content = $('#main');
@@ -35,3 +33,8 @@
     });
   }
 ));
+
+$().ready(function() {
+    $('#leadership-fader').hgvcgFader();
+    $('#associates-fader').hgvcgFader();
+});

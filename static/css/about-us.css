@@ -12,7 +12,6 @@
     box-shadow: 0 0 0px 1px rgba(0,0,0,0.1);
     padding: 4rem 0;
 }
-
 .tout-copy {
     color: #666;
     display: block;
@@ -20,6 +19,10 @@
     font-weight: 300;
     line-height: 1.2em;
     text-align: center;
+}
+
+#leadership, #associates {
+    padding-bottom: 0;
 }
 
 .alum {
@@ -32,8 +35,11 @@
 }
 
 .alum-information {
-    box-sizing: border-box;
     padding: 0 2rem;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .alum-information hgroup {
@@ -47,4 +53,16 @@
 
 .alum-information p {
     margin-bottom: 0;
+}
+
+.fader {
+    height: 436px;
+}
+
+.fader-information {
+    margin-top: 11%;
+}
+
+.fader-information hgroup {
+    margin-bottom: 2rem;
 }

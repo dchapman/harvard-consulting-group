@@ -109,7 +109,7 @@ body {
 
 #main {
     position: relative;
-    z-index: -1;
+    z-index: 0;
 }
 
 p {
@@ -159,17 +159,49 @@ p {
     border-color: #f82a55;
 }
 
+.heading-a {
+    color: #f82a55;
+    display: inline;
+    font-size: 4.2rem;
+    font-weight: 600;
+    line-height: 1.2em;
+    margin: 0;
+}
+
 .heading-b {
     color: #f82a55;
     font-size: 2.1rem;
     font-weight: 600;
+    line-height: 1.2em;
+    margin: 0;
+}
+
+.subheading-a {
+    display: inline;
+    font-size: 4.2rem;
+    font-weight: 500;
+    line-height: 1.2em;
     margin: 0;
 }
 
 .subheading-b {
     font-size: 2.1rem;
     font-weight: 300;
+    line-height: 1.2em;
     margin: 0;
+}
+
+.button {
+    cursor: pointer;
+    color: #333;
+    border-color: #333;
+    border-width: 1px;
+    border-style: solid;
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 300;
+    padding: 0.3rem 0.6rem;
+    text-decoration: none;
 }
 
 .full-width-copy {
