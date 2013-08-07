@@ -1,0 +1,50 @@
+/**
+ * About Us
+ */
+
+#hero {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+}
+
+.tout {
+    box-shadow: 0 0 0px 1px rgba(0,0,0,0.1);
+    padding: 4rem 0;
+}
+
+.tout-copy {
+    color: #666;
+    display: block;
+    font-size: 3.4rem;
+    font-weight: 300;
+    line-height: 1.2em;
+    text-align: center;
+}
+
+.alum {
+    margin-bottom: 3.4rem;
+}
+
+.alum-thumb {
+    display: block;
+    height: auto;
+}
+
+.alum-information {
+    box-sizing: border-box;
+    padding: 0 2rem;
+}
+
+.alum-information hgroup {
+    margin-bottom: 0.8rem;
+}
+
+.alum-information .name,
+.alum-information .title {
+    line-height: 1.2em;
+}
+
+.alum-information p {
+    margin-bottom: 0;
+}
