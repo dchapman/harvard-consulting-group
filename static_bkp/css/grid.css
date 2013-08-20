@@ -19,8 +19,10 @@
 ********************************************/
 .container {
   position:relative;
-  width:94%;
-  max-width: 1024px;
+  min-width: 1024px;
+  width: 1024px;
+  /*width:94%;
+  max-width: 1024px;*/
   margin-left:auto;
   margin-right:auto;
   /*overflow:hidden;*/
@@ -131,7 +133,7 @@
 
   /* Mobile-only columns
   ********************************************/
-  .mcol1 {
+  /*.mcol1 {
     width: 6.33333%;
   }
   .mcol2 {
@@ -166,7 +168,7 @@
   }
   .mcol12 {
     width: 98%;
-  }
+  }*/
 
   /* Hide on mobile
   ********************************************/

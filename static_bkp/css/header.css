@@ -2,15 +2,13 @@
  * Header
  */
 
-#site-header {
-}
-
 #site-logo {
     background-image: url("../img/logo.jpg");
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
     height: 6.4rem;
-    margin: 0;
-    width: 9.5rem;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 #site-header-top {
@@ -37,7 +35,7 @@
             transition: all 0.3s ease-out;
 }
 
-#site-navigation li a {
+#site-navigation a {
     color: #333;
     display: block;
     font-size: 1.4rem;
@@ -63,6 +61,21 @@
     color: #fff;
 }
 
+#site-navigation .linkedin:hover {
+    background-color: #fff;
+}
+
+.linkedin a {
+    background-image: url('../img/icon_linkedin.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 2.3rem;
+    display: block;
+    height: 6.4rem;
+    text-indent: -9999px;
+    width: 2.3rem;
+}
+
 /* Bottom Header */
 
 #site-header-bottom {
@@ -70,7 +83,6 @@
     height: 3.4rem;
     position: absolute;
     top: 6.4rem;
-    z-index: 1;
 }
 
 #section-navigation {

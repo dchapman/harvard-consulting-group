@@ -93,10 +93,6 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-html, body {
-    overflow-x: hidden;
-}
-
 html {
     font-size: 62.5%;
 }
@@ -105,6 +101,11 @@ body {
     color: #333;
     font-family: "Open Sans", Helvetica, sans-serif;
     font-size: 1.6rem;
+}
+
+#site-header {
+    position: relative;
+    z-index: 10;
 }
 
 #main {
