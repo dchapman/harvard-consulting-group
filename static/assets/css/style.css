@@ -125,9 +125,9 @@ body {
     -webkit-column-count: 2; /* Safari and Chrome */
     column-count: 2;
 
-    -moz-column-gap: 3.4rem; /* Firefox */
-    -webkit-column-gap: 3.4rem; /* Safari and Chrome */
-    column-gap: 3.4rem;
+    -moz-column-gap: 5.4rem; /* Firefox */
+    -webkit-column-gap: 5.4rem; /* Safari and Chrome */
+    column-gap: 5.4rem;
 
     column-width: 40rem;
     -moz-column-width: 40rem; /* Firefox */
@@ -178,7 +178,7 @@ p {
     background-repeat: no-repeat;
     background-size: contain;
     height: 6.4rem;
-    margin: 0;
+    margin: 0 0 0 2rem;
     padding: 0;
     text-indent: -9999em;
     width: 9.5rem;
@@ -186,10 +186,6 @@ p {
 
 .main-nav .nav > li {
     box-shadow: inset 1px 0 0 0 rgba(0,0,0,0.08);
-}
-
-.main-nav .nav > .linkedin {
-    padding: 2.25rem 0 2.25rem 2.25rem;
 }
 
 .main-nav .nav > li > a {
@@ -228,6 +224,10 @@ p {
     background-color: #f1f1f1;
 }
 
+.main-nav .nav > .linkedin {
+    padding: 2.25rem 0 2.25rem 2.25rem;
+}
+
 .main-nav .nav > .linkedin > a {
     background-image: url('../img/icon_linkedin.png');
     background-repeat: no-repeat;
@@ -237,6 +237,22 @@ p {
     padding: 0;
     text-indent: -9999em;
     width: 2.3rem;
+
+    -webkit-transition: all 0.15s ease-out;
+       -moz-transition: all 0.15s ease-out;
+         -o-transition: all 0.15s ease-out;
+            transition: all 0.15s ease-out;
+}
+
+.main-nav .nav > .linkedin a:hover {
+    background-color: transparent;
+}
+
+.main-nav .nav > .linkedin > a:active {
+    background-color: transparent;
+    height: 2.0rem;
+    padding-left: 0.3rem;
+    width: 2.0rem;
 }
 
 #pageheader .subnav .navbar-inner {
@@ -407,6 +423,10 @@ p {
 /* alums */
 #alums .thumbnails {
     margin-top: 2.8rem;
+}
+
+.alum {
+    margin-bottom: 3.4rem;
 }
 
 .alum .caption {

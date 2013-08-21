@@ -1,19 +1,18 @@
 $().ready(function() {
-/*    var winHeight,
-        newSecHeight;
+    /* scrollto */
+    var $scrollLinks = $('.subnav .nav a');
 
-    $(window).on('resize', function() {
-        halfHeights();
+    console.log($scrollLinks);
+
+    $scrollLinks.on('click', function() {
+        var dest = $(this).attr('href');
+
+        $.scrollTo(dest, {
+            'offset': -100,
+            'duration': 600,
+            'easing': 'easeOutBack'
+        });
     });
 
-    var halfHeights = function() {
-        console.log('hi');
 
-        winHeight = $(window).height();
-        newSecHeight = .5 * winHeight;
-
-        $('.half-height').css({'height': newSecHeight});
-    };
-
-    halfHeights();*/
 });
