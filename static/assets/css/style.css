@@ -274,7 +274,8 @@ p {
 }
 
 .subnav .nav > li > a:hover,
-.subnav .nav > .active > a {
+.subnav .nav > .active > a,
+.subnav .nav > .active > a:hover {
     background-color: #f82a55;
     color: #fff;
     text-shadow: none;
@@ -381,6 +382,7 @@ p {
     width: 2.9rem;
 
     opacity: 0.5;
+    filter: alpha(opacity=50);
     filter: alpha(opacity=50);
 
     -webkit-border-radius: 0;
