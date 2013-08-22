@@ -396,6 +396,7 @@ p {
     position: absolute;
     top: 42%;
     width: 2.9rem;
+    z-index: 100;
 
     opacity: 0.5;
     filter: alpha(opacity=50);
