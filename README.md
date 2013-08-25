@@ -1,2 +1,0 @@
-harvard-consulting-group
-========================

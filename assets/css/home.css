@@ -1,0 +1,42 @@
+/**
+ * Home
+ */
+
+.home {
+    background: url(../img/bg_photo-harvard-3-ph.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.home .container {
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.home hgroup {
+    padding: 0 2rem;
+}
+
+.home .tagline {
+    font-size: 5.5rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    padding: 18% 2rem 0 2rem;
+}
+
+.home .subline {
+    color: #333;
+    font-size: 2.1rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    margin: 2.1rem 0 1.6rem;
+}
+
+.home .crimson {
+    color: #f82a55;
+}
+
+.home .learn-more {}
