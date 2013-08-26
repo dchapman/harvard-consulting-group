@@ -1,3 +1,158 @@
 /**
  * Experience
  */
+
+.experience .hero-unit {
+    background-image: url("../img/bg_photo-harvard-1.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0;
+    height: 42rem;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#hgvcg-news {
+    position: relative;
+}
+
+.news .carousel-inner {
+  height: 100%;
+}
+
+#carousel-news {
+    padding: 6rem 0;
+}
+
+#carousel-news .item {
+  -webkit-transition: 0.6s ease-in-out top;
+     -moz-transition: 0.6s ease-in-out top;
+      -ms-transition: 0.6s ease-in-out top;
+       -o-transition: 0.6s ease-in-out top;
+          transition: 0.6s ease-in-out top;
+}
+
+#carousel-news .active {
+  top: 0;
+}
+
+#carousel-news .next {
+  top: 400px;
+}
+
+#carousel-news .prev {
+  top: -400px;
+}
+
+#carousel-news .next.left,
+#carousel-news .prev.right {
+  top: 0;
+}
+
+#carousel-news .active.left {
+  top: -400px;
+}
+
+#carousel-news .active.right {
+  top: 400px;
+}
+
+#carousel-news .item {
+    left: 0;
+}
+
+#carousel-news .news-item {
+    background-color: #e7e7e7;
+}
+
+#carousel-news .news-item:first-child {
+    margin-left: 0;
+}
+
+#carousel-news .news-title {
+    color: #333;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    margin: 0 0 0.8rem;
+}
+
+#carousel-news .news-source,
+#carousel-news .news-date {
+    color: #333;
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.2em;
+    margin: 0 0 2rem;
+}
+
+#carousel-news .news-source a {
+    color: #333;
+}
+
+#carousel-news .news-source a:after {
+    bottom: -1px;
+    content: '';
+    display: block;
+    height: 1px;
+    position: relative;
+    width: 100%;
+    background-color: #666;
+}
+
+#hgvcg-news .carousel-control {
+    background-color: transparent;
+    border: medium none;
+    border-radius: 0;
+    display: block;
+    height: 2.9rem;
+    opacity: 0.5;
+    position: absolute;
+    top: 42%;
+    width: 5.7rem;
+    z-index: 1;
+}
+
+#hgvcg-news .left.prev {
+    left: 50%;
+    margin-left: -1.5rem;
+    top: 0;
+}
+
+#hgvcg-news .right.next {
+    right: 50%;
+    margin-right: -1.5rem;
+    bottom: 0;
+}
+
+.pipe {
+    margin: 0 0.2rem;
+}
+
+#hgvcg-news .carousel-control {
+    background-color: transparent;
+    border: 0 none;
+    border-radius: 0;
+}
+
+#hgvcg-news .left.prev {
+    background-image: url("../img/btn_slide-up.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 50%;
+    margin-left: -2.85rem;
+    top: 12.6rem;
+}
+
+#hgvcg-news .right.next {
+    background-image: url("../img/btn_slide-down.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    right: 50%;
+    margin-right: -2.85rem;
+    bottom: 7rem;
+    top: auto;
+}

@@ -40,3 +40,13 @@
 }
 
 .home .learn-more {}
+
+/**
+ * mobile
+ */
+
+@media only screen and (max-width: 979px) {
+    .home .tagline {
+        font-size: 4rem;
+    }
+}

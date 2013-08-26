@@ -1,30 +1,38 @@
+/**
+ * About
+ */
 
 .about .hero-unit {
     background-image: url("../img/bg_photo-harvard-1.jpg");
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 0 0 0 0;
-    height: 404px;
+    border-radius: 0;
+    height: 42rem;
     margin-bottom: 0;
     padding: 0;
     text-align: center;
 }
+
 .section.carousel-container {
     padding: 0;
 }
+
 .section.carousel-container .section-heading {
     position: absolute;
     top: 3.4rem;
 }
+
 .carousel {
     height: 54.5rem;
     margin: 0;
 }
+
 .carousel-container .container {
     position: relative;
     z-index: 10;
 }
+
 .carousel .item {
     background-color: #E7E7E7;
     background-position: center center;
@@ -34,9 +42,11 @@
     max-height: 54.5rem;
     overflow: hidden;
 }
+
 .carousel .profile {
     margin-top: 16rem;
 }
+
 .carousel .profile .name {
     color: #F82A55;
     display: inline-block;
@@ -45,6 +55,7 @@
     margin-bottom: 2.8rem;
     margin-right: 0.2em;
 }
+
 .carousel .profile .title {
     color: #333333;
     display: inline-block;
@@ -52,6 +63,7 @@
     font-weight: 400;
     margin-bottom: 2.8rem;
 }
+
 .carousel .carousel-control {
     background-color: transparent;
     border: medium none;
@@ -65,28 +77,34 @@
     width: 2.9rem;
     z-index: 1;
 }
+
 .carousel .left {
     background-image: url("../img/btn_slide-left.png");
     background-repeat: no-repeat;
     background-size: cover;
     left: 4.4rem;
 }
+
 .carousel .right {
     background-image: url("../img/btn_slide-right.png");
     background-repeat: no-repeat;
     background-size: cover;
     right: 4.4rem;
 }
+
 #alums .thumbnails {
     margin-top: 2.8rem;
 }
+
 .alum {
     margin-bottom: 3.4rem;
 }
+
 .alum .caption {
     padding-left: 2rem;
     padding-top: 0;
 }
+
 .alum .caption .name {
     color: #F82A55;
     display: block;
@@ -95,6 +113,7 @@
     line-height: 1em;
     margin: 0 0 0.8rem;
 }
+
 .alum .caption .title {
     color: #333333;
     display: inline-block;

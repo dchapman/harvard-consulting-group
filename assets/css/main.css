@@ -130,6 +130,7 @@ body {
     margin: 0 !important;
     padding: 1.6rem;
     width: 50%;
+    width: 50%;
 
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -260,9 +261,34 @@ body {
     outline: 0 none;
 }
 
-.btn-wire {}
+.btn-wire {
+    background-color: transparent;
+    background-image: none;
+    border-radius: 0;
+    border: 1px solid #666;
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 300;
+    padding: 0.4rem 0.8rem;
+    text-shadow: none;
+    text-transform: uppercase;
 
-.btn-wire:hover {}
+    -webkit-transition: all 0.15s ease-out;
+       -moz-transition: all 0.15s ease-out;
+         -o-transition: all 0.15s ease-out;
+            transition: all 0.15s ease-out;
+}
+
+.btn-wire:hover {
+    background-color: transparent;
+    border-color: #f82a55;
+    color: #f82a55;
+
+    -webkit-transition: all 0.15s ease-out;
+       -moz-transition: all 0.15s ease-out;
+         -o-transition: all 0.15s ease-out;
+            transition: all 0.15s ease-out;
+}
 
 /* thumbnails */
 .thumbnails .thumbnail {
