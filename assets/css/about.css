@@ -3,7 +3,7 @@
  */
 
 .about .hero-unit {
-    background-image: url("../img/bg_photo-harvard-1.jpg");
+    background-image: url("../img/bg_about-us.jpg");
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -44,7 +44,16 @@
 }
 
 .carousel .profile {
+    margin-top: 12rem;
+}
+
+.carousel .profile.no-image {
     margin-top: 16rem;
+}
+
+.carousel .profile hgroup {
+    display: block;
+    margin-bottom: 1.6rem;
 }
 
 .carousel .profile .name {
@@ -52,8 +61,8 @@
     display: inline-block;
     font-size: 4.2rem;
     font-weight: 600;
-    margin-bottom: 2.8rem;
-    margin-right: 0.2em;
+    line-height: 1.2em;
+    margin: 0 0.8rem 0 0;
 }
 
 .carousel .profile .title {
@@ -61,7 +70,12 @@
     display: inline-block;
     font-size: 4.2rem;
     font-weight: 400;
-    margin-bottom: 2.8rem;
+    line-height: 1.2em;
+    margin: 0;
+}
+
+.carousel .profile > p {
+    margin-bottom: 2.2rem;
 }
 
 .carousel .carousel-control {
@@ -75,23 +89,105 @@
     position: absolute;
     top: 42%;
     width: 2.9rem;
-    z-index: 1;
+    z-index: 10;
 }
 
-.carousel .left {
+.carousel .carousel-control.left {
     background-image: url("../img/btn_slide-left.png");
     background-repeat: no-repeat;
     background-size: cover;
     left: 4.4rem;
 }
 
-.carousel .right {
+.carousel .carousel-control.right {
     background-image: url("../img/btn_slide-right.png");
     background-repeat: no-repeat;
     background-size: cover;
     right: 4.4rem;
 }
 
+#alums .engagement {
+    margin-top: 1.6rem;
+}
+
+.engagement .company {
+    color: #F82A55;
+    display: block;
+    font-size: 2.1rem;
+    font-weight: 600;
+    line-height: 1em;
+    margin: 0 0 0.8rem;
+}
+
+.engagement .time-period {}
+
+.engagement .leadership {
+    margin-bottom: 1.6rem;
+}
+
+.engagement .alum {
+    color: #333333;
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.4em;
+}
+
+.engagement > .alum {
+    margin-top: 1.6rem;
+}
+
+.engagement .position {
+    color: #333333;
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 1.6rem;
+}
+
+.engagement .alum > .position {
+    display: inline-block;
+    margin-top: 0;
+}
+
+.engagement .position + .alum {
+    margin-bottom: 0;
+}
+
+.engagement .position + .alum,
+.engagement .alum + .alum,
+.engagement .associates .alum {
+    margin-top: 0;
+}
+
+.engagement .alum .education {
+    color: #333333;
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.engagement .associates {
+}
+
+.engagement .associates ul {
+    margin: 0;
+}
+
+.engagement .associates li {
+    color: #333333;
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.engagement .associates .alum {
+    margin: 0.2rem 0;
+}
+
+/* Backup of thumbnail alums */
+/*
 #alums .thumbnails {
     margin-top: 2.8rem;
 }
@@ -121,4 +217,4 @@
     font-weight: 400;
     line-height: 1em;
     margin: 0 0 0.8rem;
-}
+}*/

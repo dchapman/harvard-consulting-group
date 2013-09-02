@@ -92,7 +92,7 @@ body {
 .modal-header h3 {
     color: #fff;
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 3.4rem;
     text-transform: uppercase;
 }
@@ -211,8 +211,12 @@ body {
     display: block;
     font-size: 3.4rem;
     font-weight: 300;
-    line-height: 1.2em;
+    line-height: 1.3em;
     text-align: center;
+}
+
+.tout strong {
+    font-weight: 400;
 }
 
 /* button */
@@ -222,9 +226,9 @@ body {
     border-radius: 0;
     border: none;
     color: #fff;
-    font-size: 1.4rem;
-    font-weight: 500;
-    padding: 12px 14px 10px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 1.6rem 2rem;
     text-shadow: none;
     text-transform: uppercase;
 
@@ -236,7 +240,7 @@ body {
 
 .btn-solid:hover {
     background-color: #fff;
-    color: #333;
+    color: #f82a55;
 
     -webkit-transition: all 0.15s ease-out;
        -moz-transition: all 0.15s ease-out;
@@ -310,8 +314,9 @@ body {
     border-width: 3px;
     border-style: solid;
     display: inline-block;
+    font-family: 'Titillium Web', sans-serif;
     font-size: 2.1rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.4em;
     margin: 0 0 2rem;
     padding: 0.5rem 1rem;
@@ -348,6 +353,20 @@ p {
     line-height: 1.6em;
 }
 
+.list {
+    font-size: 1.6rem;
+    list-style: square;
+    margin: 2rem 0;
+    padding-left: 4rem;
+}
+
+.list li {
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1.4em;
+    margin-bottom: 2.2rem;
+    width: 80%;
+}
 
 /**
  * Footer

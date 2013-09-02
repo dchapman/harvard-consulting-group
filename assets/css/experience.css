@@ -3,15 +3,46 @@
  */
 
 .experience .hero-unit {
-    background-image: url("../img/bg_photo-harvard-1.jpg");
+    background-image: url("../img/bg_experience.jpg");
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 0;
-    height: 42rem;
     margin-bottom: 0;
-    padding: 0;
-    text-align: center;
+    padding: 16rem 0 4rem;
+}
+
+.experience .weve-worked-with {
+    margin-left: 0;
+}
+
+.experience .content-heading {
+    background-color: rgba(0,0,0,0.5);
+    color: #f82a55;
+    font-size: 3.4rem;
+    font-weight: 300;
+    margin: 0;
+    padding: 1rem 2rem;
+}
+
+.experience .copy-container {
+    background-color: #fff;
+    padding: 1rem 2rem;
+}
+
+.companies {
+}
+
+.companies .company {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.companies .company img {
+    padding: 2rem;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 #hgvcg-news {
@@ -27,11 +58,11 @@
 }
 
 #carousel-news .item {
-  -webkit-transition: 0.6s ease-in-out top;
-     -moz-transition: 0.6s ease-in-out top;
-      -ms-transition: 0.6s ease-in-out top;
-       -o-transition: 0.6s ease-in-out top;
-          transition: 0.6s ease-in-out top;
+  -webkit-transition: 0.15s ease-in-out top;
+     -moz-transition: 0.15s ease-in-out top;
+      -ms-transition: 0.15s ease-in-out top;
+       -o-transition: 0.15s ease-in-out top;
+          transition: 0.15s ease-in-out top;
 }
 
 #carousel-news .active {
@@ -72,11 +103,25 @@
 }
 
 #carousel-news .news-title {
-    color: #333;
     font-size: 2rem;
     font-weight: 400;
     line-height: 1.2em;
     margin: 0 0 0.8rem;
+}
+
+#carousel-news .news-title a {
+    color: #333;
+}
+
+#carousel-news .news-title a:hover {
+    color: #f82a55;
+    text-decoration: none;
+
+    -webkit-transition: 0.15s ease-in-out all;
+       -moz-transition: 0.15s ease-in-out all;
+        -ms-transition: 0.15s ease-in-out all;
+         -o-transition: 0.15s ease-in-out all;
+            transition: 0.15s ease-in-out all;
 }
 
 #carousel-news .news-source,
@@ -93,6 +138,10 @@
     color: #333;
 }
 
+#carousel-news .news-source a:hover {
+    color: #333;
+}
+
 #carousel-news .news-source a:after {
     bottom: -1px;
     content: '';
@@ -101,6 +150,27 @@
     position: relative;
     width: 100%;
     background-color: #666;
+}
+
+#carousel-news .news-source a:hover:after {
+    background-color: #f82a55;
+
+    -webkit-transition: 0.15s ease-in-out all;
+       -moz-transition: 0.15s ease-in-out all;
+        -ms-transition: 0.15s ease-in-out all;
+         -o-transition: 0.15s ease-in-out all;
+            transition: 0.15s ease-in-out all;
+}
+
+#carousel-news .news-source a:hover {
+    color: #f82a55;
+    text-decoration: none;
+
+    -webkit-transition: 0.15s ease-in-out all;
+       -moz-transition: 0.15s ease-in-out all;
+        -ms-transition: 0.15s ease-in-out all;
+         -o-transition: 0.15s ease-in-out all;
+            transition: 0.15s ease-in-out all;
 }
 
 #hgvcg-news .carousel-control {
@@ -155,4 +225,28 @@
     margin-right: -2.85rem;
     bottom: 7rem;
     top: auto;
+}
+
+/**
+ * mobile
+ */
+
+@media only screen and (max-width: 979px) {
+    .experience .hero-unit {
+        padding-top: 0;
+    }
+
+    .experience .content-heading {
+        text-align: center;
+    }
+
+    .experience .thumbnails {
+        margin-top: 6%;
+    }
+
+    .experience .thumbnails .span3 {
+        float: left;
+        margin: 2%;
+        width: 46%;
+    }
 }

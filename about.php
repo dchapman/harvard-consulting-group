@@ -1,3 +1,45 @@
+<?php
+define("EMAIL", "info@hgvcg.com");
+
+if(isset($_POST['submit'])) {
+
+	//include validation class
+ 	include('/scripts/validate.class.php');
+
+	//assign post data to variables
+  	$name = trim($_POST['contact-name']);
+  	$email = trim($_POST['contact-email']);
+  	$message = trim($_POST['contact-message']);
+
+  	//start validating our form
+ 	$v = new validate();
+    $v->validateStr($name, "name", 3, 75);
+    $v->validateEmail($email, "email");
+    $v->validateStr($message, "message", 5, 1000);
+
+    if(!$v->hasErrors()) {
+          $header = "From: $email\n" . "Reply-To: $email\n";
+          $subject = "Contact Form Subject";
+          $email_to = EMAIL;
+
+          $emailMessage = "Name: " . $name . "\n";
+          $emailMessage .= "Email: " . $email . "\n\n";
+          $emailMessage .= $message;
+
+          @mail($email_to, $subject, $emailMessage, $header);
+
+      } else {
+      //store the errors list in a variable
+      $errors = $v->displayErrors();
+
+      //get the individual error messages
+      $nameErr = $v->getError("name");
+      $emailErr = $v->getError("email");
+      $messageErr = $v->getError("message");
+    }//end error check
+
+}// end isset
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +50,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Harvard Volunteer Consulting Group in elementum, sem nec eleifend tincidunt, id HGVCG blandit turpis orci nec nunc.">
 
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-	<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+	<link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
-	<link href="assets/css/main.css" rel="stylesheet">
-	<link href="assets/css/header.css" rel="stylesheet">
-	<link href="assets/css/about.css" rel="stylesheet">
+	<link href="/assets/css/main.css" rel="stylesheet">
+	<link href="/assets/css/header.css" rel="stylesheet">
+	<link href="/assets/css/about.css" rel="stylesheet">
 
+	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -22,10 +66,10 @@
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114x114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72x72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57x57-precomposed.png">
-                                   <link rel="shortcut icon" href="assets/ico/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114x114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72x72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57x57-precomposed.png">
+                                   <link rel="shortcut icon" href="/assets/ico/apple-touch-icon.png">
 </head>
 
 <body class="about" data-spy="scroll" data-target=".subnav" data-offset="200">
@@ -39,11 +83,11 @@
 
 					<div class="nav-collapse collapse">
 						<ul class="nav nav-pills pull-right">
-							<li class="active"><a href="about.html">About Us</a></li>
+							<li class="active"><a href="about.php">About Us</a></li>
 							<li><a href="experience.html">Experience</a></li>
 							<li><a href="get-involved.html">Get Involved</a></li>
 							<li><a href="#contact-modal" role="button" data-toggle="modal">Contact</a></li>
-							<li class="linkedin"><a href="#">LinkedIn</a></li>
+							<li class="linkedin"><a href="http://www.linkedin.com/groups/HGVCG-5159639/about" target="_blank">LinkedIn</a></li>
 						</ul>
 					</div>
 				</div>
@@ -59,7 +103,7 @@
 						<ul class="nav nav-pills pull-left">
 							<li><a href="#about-hgvcg">About HGVCG</a></li>
 							<li><a href="#leadership">Leadership</a></li>
-							<li><a href="#associates">Associates</a></li>
+							<!--<li><a href="#associates">Associates</a></li>-->
 							<li><a href="#alums">Alums</a></li>
 						</ul>
 					</div>
@@ -70,19 +114,17 @@
 
 	<div id="main" role="main">
 		<div class="container-fluid clearfix">
-			<div class="hero-unit clearfix">
-				<div class="container clearfix">
-					<!--<h3>Fusce hendrerit vantur venenatis lorem, ullamcorper ipsum elit.</h3>-->
-				</div>
+			<div id="about-hgvcg" class="hero-unit clearfix">
+				&nbsp;
 			</div>
 
-			<div id="about-hgvcg" class="dark section">
+			<div class="dark section">
 				<div class="container">
 					<h2 class="section-heading">About HGVCG</h2>
 
 					<div class="two-col">
-						<p>Phasellus interdum sit amet elit et dignissim. In elementum, sem nec eleifend tincidunt, dolor leo semper ante, id blandit turpis orci nec nunc. Quisque convallis scelerisque ultricies. Quisque aliquet porta magna, vitae adipiscing libero convallis ac. Proin eu purus a nulla dictum scelerisque ac at magna. Donec molestie leo nunc, vel blandit tellus convallis quis.</p>
-						<p>Phasellus interdum sit amet elit et dignissim. In elementum, sem nec eleifend tincidunt, dolor leo semper ante, id blandit turpis orci nec nunc. Quisque convallis scelerisque ultricies. Quisque aliquet porta magna, vitae adipiscing libero convallis ac. Proin eu purus a nulla dictum scelerisque ac at magna. Donec molestie leo nunc, vel blandit tellus convallis quis.</p>
+						<p>Founded in 2008, the VCG has worked with a range of organizations, from start-ups to established organizations, from non-profit to private. The VCG serves two purposes. Firstly, to provide pro-bono consulting to organizations in need of consulting services. Secondly, to expose graduate, post-doctoral and career professionals to an intense and hands-on experience in management consulting.</p>
+						<p>The Volunteer Consulting Group combines the enthusiasm and analytical skills of Harvard’s graduate community, post-doctoral fellows, and career professionals to bring solutions and ideas to organizations in the Greater Boston area. We assemble teams of 6 associates, headed by an Engagement Manager and two Principals who have run several previous VCG engagements.</p>
 					</div>
 				</div>
 			</div>
@@ -95,44 +137,50 @@
 				<div id="carousel-leadership" class="carousel slide">
 					<!-- Carousel items -->
 					<div class="carousel-inner">
-						<div class="active item" style="background-image: url('assets/img/member_jagoff.png');">
+						<div class="item">
 							<div class="container">
-								<div class="span5 offset6 profile">
-									<h4 class="name">Jai Sim</h4>
-									<h4 class="title">Job Title</h4>
+								<div class="span10 offset1 profile no-image">
+									<hgroup>
+										<h4 class="name">Zsofia Botyanszki</h4>
+										<h4 class="title">Principal</h4>
+									</hgroup>
 
-									<p>Phasellus interdum sit amet elit et dignissim. In elementum, sem nec eleifend tincidunt, dolor leo semper ante, id blandit turpis orci nec nunc. Quisque convallis scelerisque ultricies. Quisque aliquet porta magna, vitae adipiscing libero convallis ac.</p>
+									<p>Zsofia is a 5th year graduate student in chemistry, working on engineering bacterial biofilms. She has been involved with HGVCG for the past three years, and has had the opportunity to work closely with leaders of startup and nonprofit organizations in Boston. Zsofia hopes to continue to pursue management consulting after graduation.</p>
 
-									<a href="#" class="btn btn-wire">Connect on LinkedIn</a>
-									<a href="#" class="btn btn-wire">Email Jai Sim</a>
+									<a href="http://www.linkedin.com/profile/view?id=125402688" class="btn btn-wire" target="_blank">Connect on LinkedIn</a>
+									<a href="mailto:zsofia.botyanszki@hgvcg.com" class="btn btn-wire">Email Zsofia</a>
 								</div>
 							</div>
 						</div>
 
-						<div class="item" style="background-image: url('assets/img/member_jagoff.png');">
+						<div class="active item" style="background-image: url('assets/img/member_jeffrey-erwin.png');">
 							<div class="container">
 								<div class="span5 offset6 profile">
-									<h4 class="name">Jai Sim</h4>
-									<h4 class="title">Job Title</h4>
+									<hgroup>
+										<h4 class="name">Jeffrey Erwin</h4>
+										<h4 class="title">Engagement Manager</h4>
+									</hgroup>
 
 									<p>Phasellus interdum sit amet elit et dignissim. In elementum, sem nec eleifend tincidunt, dolor leo semper ante, id blandit turpis orci nec nunc. Quisque convallis scelerisque ultricies. Quisque aliquet porta magna, vitae adipiscing libero convallis ac.</p>
 
-									<a href="#" class="btn btn-wire">Connect on LinkedIn</a>
-									<a href="#" class="btn btn-wire">Email Jai Sim</a>
+									<a href="http://www.linkedin.com/in/jeffreyerwin" class="btn btn-wire" target="_blank">Connect on LinkedIn</a>
+									<a href="mailto:jeffrey.erwin@hgvcg.com" class="btn btn-wire">Email Jeffrey</a>
 								</div>
 							</div>
 						</div>
 
-						<div class="item" style="background-image: url('assets/img/member_jagoff.png');">
+						<div class="item">
 							<div class="container">
-								<div class="span5 offset6 profile">
-									<h4 class="name">Jai Sim</h4>
-									<h4 class="title">Job Title</h4>
+								<div class="span10 offset1 profile no-image">
+									<hgroup>
+										<h4 class="name">Jai Sim</h4>
+										<h4 class="title">Associate</h4>
+									</hgroup>
 
-									<p>Phasellus interdum sit amet elit et dignissim. In elementum, sem nec eleifend tincidunt, dolor leo semper ante, id blandit turpis orci nec nunc. Quisque convallis scelerisque ultricies. Quisque aliquet porta magna, vitae adipiscing libero convallis ac.</p>
+									<p>Jai is a 4th year Ph.D. candidate in applied physics at Harvard University, working on nanoscale oxides. Jai has been with HGVCG for the past year, and has had the opportunity to work intimately with the executive teams of startups and nonprofit organizations around Boston. </p>
 
-									<a href="#" class="btn btn-wire">Connect on LinkedIn</a>
-									<a href="#" class="btn btn-wire">Email Jai Sim</a>
+									<a href="http://www.linkedin.com/profile/view?id=228878382" class="btn btn-wire" target="_blank">Connect on LinkedIn</a>
+									<a href="mailto:jai.sim@hgvcg.com" class="btn btn-wire">Email Jai</a>
 								</div>
 							</div>
 						</div>
@@ -146,17 +194,16 @@
 
 			<aside class="tout white">
 				<div class="container">
-					<p>HGVCG’s strength is the strength of its team members. Nunc quis lorem varius, sollicitudin tellus id, sodales magna curabitir eget non duis set augue.</p>
+					<p>HGVCG’s strength is the strength of its team members. Our diverse teams work together to provide balanced, powerful solutions for your company over the course of your engagement.</p>
 				</div>
 			</aside>
 
-			<div id="associates" class="carousel-container section">
+			<!--<div id="associates" class="carousel-container section">
 				<div class="container">
 					<h2 class="section-heading">Associates</h2>
 				</div>
 
 				<div id="carousel-associates" class="carousel slide">
-					<!-- Carousel items -->
 					<div class="carousel-inner">
 						<div class="active item" style="background-image: url('assets/img/member_jagoff.png');">
 							<div class="container">
@@ -201,19 +248,19 @@
 						</div>
 					</div>
 
-					<!-- Carousel nav -->
 					<a class="carousel-control left" href="#carousel-associates" data-slide="prev"></a>
 					<a class="carousel-control right" href="#carousel-associates" data-slide="next"></a>
 				</div>
-			</div>
+			</div>-->
 
-			<aside class="tout white">
+			<!--<aside class="tout white">
 				<div class="container">
 					<p>HGVCG’s strength is the strength of its team members. Nunc quis lorem varius, sollicitudin tellus id, sodales magna curabitir eget non duis set augue.</p>
 				</div>
-			</aside>
+			</aside>-->
 
-			<div id="alums" class="light section">
+			<!-- Backup of thumbnail alums -->
+			<!--<div id="alums" class="light section">
 				<div class="container">
 					<h2 class="section-heading">Alums</h2>
 
@@ -336,6 +383,90 @@
 						</li>
 					</ul>
 				</div>
+			</div>-->
+
+			<div id="alums" class="light section">
+				<div class="container">
+					<h2 class="section-heading">Alums</h2>
+				</div>
+
+				<div class="container">
+					<ul class="thumbnails">
+						<li class="span6 engagement">
+							<div class="thumbnail">
+								<h3 class="company">Vaxess <span class="time-period">(Spring 2013)</span></h3>
+
+								<div class="leadership">
+									<h4 class="alum"><span class="position">Principal:</span> Zsofia Botyanszki, <span class="education">Ph.D Candidate</span></h4>
+									<h4 class="alum"><span class="position">Engagement Manager:</span> Jeffrey Erwin, <span class="education">M.A. Management (finance concentration) candidate</span></h4>
+								</div>
+
+								<div class="associates">
+									<h5 class="position">Associates:</h5>
+									<ul>
+										<li><h4 class="alum">Yu Chen, <span class="education">PhD</span></h4></li>
+										<li><h4 class="alum">Gregory Fomovsky, <span class="education">PhD</span></h4></li>
+										<li><h4 class="alum">Jared Ganis<span class="education">PhD Candidate</span></h4></li>
+										<li><h4 class="alum">David Raiser, <span class="education">PhD Candidate</span></h4></li>
+										<li><h4 class="alum">Jai Sim, <span class="education">PhD Candidate</span></h4></li>
+										<li><h4 class="alum">Zhenhua Lai, <span class="education">PhD Candidate</span></h4></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+
+						<li class="span6 engagement">
+							<div class="thumbnail">
+								<h3 class="company">Venture Cafe <span class="time-period">(Spring 2012)</span></h3>
+
+								<div class="leadership">
+									<h5 class="position">Principals:</h5>
+									<h4 class="alum">Cynthia J. Wang, <span class="education">Harvard University</span></h4>
+									<h4 class="alum">Jonah D. Friedman, <span class="education">Harvard University</span></h4>
+
+									<h4 class="alum"><span class="position">Engagement Manager:</span> Zsofia Botyanszki, <span class="education">PhD Candidate</span></h4>
+								</div>
+
+								<div class="associates">
+									<h5 class="position">Associates:</h5>
+									<ul>
+										<li><h4 class="alum">Miklos Antal, <span class="education">MD, PhD</span></h4></li>
+										<li><h4 class="alum">Ketki M. Hatle, <span class="education">DVM, PhD</span></h4></li>
+										<li><h4 class="alum">Siming Ma, <span class="education">PhD Candidate</span></h4></li>
+										<li><h4 class="alum">Shyama Majumdar, <span class="education">PhD, MBA</span></h4></li>
+										<li><h4 class="alum">Angela Mosquera-Escobar, <span class="education">MA, General Management</span></h4></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+
+						<li class="span6 engagement">
+							<div class="thumbnail">
+								<h3 class="company">NIBR <span class="time-period">(Fall 2011)</span></h3>
+
+								<div class="leadership">
+									<h5 class="position">Principals:</h5>
+									<h4 class="alum">Cynthia J. Wang, <span class="education">Harvard University</span></h4>
+									<h4 class="alum">Jonah D. Friedman, <span class="education">Harvard University</span></h4>
+
+									<h4 class="alum"><span class="position">Engagement Manager:</span> Silvia Culpe, <span class="education">PhD</span></h4>
+								</div>
+
+								<div class="associates">
+									<h5 class="position">Associates:</h5>
+									<ul>
+										<li><h4 class="alum">Zsofia Botyanszki, <span class="education">PhD Candidate</span></h4></li>
+										<li><h4 class="alum">Suzanne Nizza, <span class="education">PhD Candidate</span></h4></li>
+										<li><h4 class="alum">Armit Srivastava, <span class="education">PhD (BCG)</span></h4></li>
+										<li><h4 class="alum">Purnima Trivedi, <span class="education">MBA</span></h4></li>
+										<li><h4 class="alum">Jessica Yecies, <span class="education">PhD (Clearview)</span></h4></li>
+										<li><h4 class="alum">Xu Zhang, <span class="education">PhD</span></h4></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -352,14 +483,14 @@
 			<h3>Get in touch with us</h3>
 		</div>
 
-		<form id="contact-form" class="form">
+		<form id="contact-form" class="form" method="post" action=".">
 			<div class="modal-body">
 				<div class="form-row">
-					<input type="text" class="input-small" placeholder="Your Email Address">
-					<input type="text" class="input-small" placeholder="Full Name">
+					<input type="email" id="contact-email" name="contact-email" class="input-small" placeholder="Your Email Address">
+					<input type="text" id="contact-name" name="contact-name" class="input-small" placeholder="Full Name">
 				</div>
 
-				<textarea rows="3"></textarea>
+				<textarea id="contact-message" name="contact-name" rows="3"></textarea>
 			</div>
 
 			<div class="modal-footer">
@@ -369,10 +500,10 @@
 	</div>
 
 	<script src="http://code.jquery.com/jquery.js"></script>
-	<script src="assets/js/bootstrap.js"></script>
-	<script src="assets/js/main.js"></script>
+	<script src="/assets/js/bootstrap.js"></script>
+	<script src="/assets/js/main.js"></script>
 
-	<script src="assets/js/jquery.easing.1.3.js"></script>
-	<script src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+	<script src="/assets/js/jquery.easing.1.3.js"></script>
+	<script src="/assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
 </body>
 </html>

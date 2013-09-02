@@ -3,7 +3,7 @@
  */
 
 .home {
-    background: url(../img/bg_photo-harvard-3-ph.jpg) no-repeat center center fixed;
+    background: url(../img/bg_home.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -16,27 +16,40 @@
     vertical-align: middle;
 }
 
-.home hgroup {
-    padding: 0 2rem;
-}
-
 .home .tagline {
-    font-size: 5.5rem;
+    background-color: rgba(0,0,0,0.5);
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 4.4rem;
     font-weight: 400;
     line-height: 1.2em;
-    padding: 18% 2rem 0 2rem;
+    margin: 18% 0 0;
+    padding: 2rem;
 }
 
 .home .subline {
-    color: #333;
-    font-size: 2.1rem;
-    font-weight: 500;
+    background-color: rgba(0,0,0,0.75);
+    color: #fff;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 400;
     line-height: 1.2em;
-    margin: 2.1rem 0 1.6rem;
+    margin: 0 0 2.4rem;
+    padding: 2rem;
 }
 
 .home .crimson {
-    color: #f82a55;
+    position: relative;
+}
+
+.home .crimson:after {
+    background-color: #f82a55;
+    bottom: 0.5rem;
+    content: '';
+    display: inline-block;
+    height: 5px;
+    left: 0;
+    position: absolute;
+    width: 100%;
 }
 
 .home .learn-more {}

@@ -1,0 +1,11 @@
+.get-involved .hero-unit {
+    background-image: url("../img/bg_get-involved.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0;
+    height: 42rem;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: center;
+}
