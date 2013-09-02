@@ -1,45 +1,3 @@
-<?php
-define("EMAIL", "info@hgvcg.com");
-
-if(isset($_POST['submit'])) {
-
-	//include validation class
- 	include('/scripts/validate.class.php');
-
-	//assign post data to variables
-  	$name = trim($_POST['contact-name']);
-  	$email = trim($_POST['contact-email']);
-  	$message = trim($_POST['contact-message']);
-
-  	//start validating our form
- 	$v = new validate();
-    $v->validateStr($name, "name", 3, 75);
-    $v->validateEmail($email, "email");
-    $v->validateStr($message, "message", 5, 1000);
-
-    if(!$v->hasErrors()) {
-          $header = "From: $email\n" . "Reply-To: $email\n";
-          $subject = "Contact Form Subject";
-          $email_to = EMAIL;
-
-          $emailMessage = "Name: " . $name . "\n";
-          $emailMessage .= "Email: " . $email . "\n\n";
-          $emailMessage .= $message;
-
-          @mail($email_to, $subject, $emailMessage, $header);
-
-      } else {
-      //store the errors list in a variable
-      $errors = $v->displayErrors();
-
-      //get the individual error messages
-      $nameErr = $v->getError("name");
-      $emailErr = $v->getError("email");
-      $messageErr = $v->getError("message");
-    }//end error check
-
-}// end isset
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +6,7 @@ if(isset($_POST['submit'])) {
 	<title>Harvard Volunteer Consulting Group | Customized Breakthroughs at the Speed of Crimson</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Harvard Volunteer Consulting Group in elementum, sem nec eleifend tincidunt, id HGVCG blandit turpis orci nec nunc.">
+    <meta name="description" content="Harvard Graduate Volunteer Consulting Group combines the enthusiasm and analytical skills of Harvard’s graduate community, post-doctoral fellows, and career professionals to bring solutions and ideas to organizations in the Greater Boston area.">
 
     <link href="/assets/css/bootstrap.css" rel="stylesheet">
 	<link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -62,7 +20,7 @@ if(isset($_POST['submit'])) {
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    	<script src="assets/js/html5shiv.js"></script>
+    	<script src="/assets/js/html5shiv.js"></script>
     <![endif]-->
 
     <!-- Fav and touch icons -->
@@ -79,14 +37,14 @@ if(isset($_POST['submit'])) {
 				<div class="container">
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></a>
 
-					<a class="brand" href="home.html">HGVCG</a>
+					<a class="brand" href="/">HGVCG</a>
 
 					<div class="nav-collapse collapse">
 						<ul class="nav nav-pills pull-right">
-							<li class="active"><a href="about.php">About Us</a></li>
-							<li><a href="experience.html">Experience</a></li>
-							<li><a href="get-involved.html">Get Involved</a></li>
-							<li><a href="#contact-modal" role="button" data-toggle="modal">Contact</a></li>
+							<li class="active"><a href="#">About Us</a></li>
+							<li><a href="/experience">Experience</a></li>
+							<li><a href="/get-involved">Get Involved</a></li>
+							<li><a href="mailto:info@hgvcg.com">Contact</a></li>
 							<li class="linkedin"><a href="http://www.linkedin.com/groups/HGVCG-5159639/about" target="_blank">LinkedIn</a></li>
 						</ul>
 					</div>
@@ -153,7 +111,7 @@ if(isset($_POST['submit'])) {
 							</div>
 						</div>
 
-						<div class="active item" style="background-image: url('assets/img/member_jeffrey-erwin.png');">
+						<div class="active item" style="background-image: url('/assets/img/member_jeffrey-erwin.png');">
 							<div class="container">
 								<div class="span5 offset6 profile">
 									<hgroup>
